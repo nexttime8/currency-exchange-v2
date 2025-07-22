@@ -1,0 +1,19 @@
+{
+  "name": "currency-exchange-v2",
+  "version": "1.2.0",
+  "description": "A currency exchange training",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nexttime8/currency-exchange-v2.git"
+  },
+  "author": "nexttime9",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nexttime8/currency-exchange-v2/issues"
+  },
+  "homepage": "https://github.com/nexttime8/currency-exchange-v2#readme"
+}
