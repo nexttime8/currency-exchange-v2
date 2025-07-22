@@ -8,6 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
+  "dependencies": {
+    "prime-number-check": "^1.0.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nexttime8/currency-exchange-v2.git"
