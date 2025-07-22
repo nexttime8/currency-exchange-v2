@@ -1,3 +1,5 @@
+import isPrime from "prime-number-check";
+
 export const checkNumber = value => {
-    return ("this function has not yet been implemented.");
+    return isPrime(value) ? "The number is prime" : "The number is not  prime";
 }
