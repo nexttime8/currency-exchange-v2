@@ -1,0 +1,177 @@
+openapi: 3.0.0
+info:
+  title: Sample API
+  description: API for managing users, watchlists, and currency data.
+  version: 1.0.0
+
+paths:
+  /users:
+    get:
+      summary: Get a list of users
+      parameters:
+        - name: search
+          in: query
+          description: Search users by name or criteria
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of users
+    post:
+      summary: Create a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '201':
+          description: User created
+    put:
+      summary: Update a user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: User updated
+    delete:
+      summary: Delete a user
+      parameters:
+        - name: userId
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: User deleted
+
+  /watchlist:
+    get:
+      summary: Get watchlist items
+      parameters:
+        - name: search
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Watchlist retrieved
+    post:
+      summary: Add to watchlist
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WatchlistItem'
+      responses:
+        '201':
+          description: Item added
+    put:
+      summary: Update watchlist item
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WatchlistItem'
+      responses:
+        '200':
+          description: Item updated
+    delete:
+      summary: Remove item from watchlist
+      parameters:
+        - name: itemId
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Item removed
+
+  /currency:
+    get:
+      summary: Get currency details
+      parameters:
+        - name: search
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Currency details retrieved
+    post:
+      summary: Add currency
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Currency'
+      responses:
+        '201':
+          description: Currency added
+    put:
+      summary: Update currency
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Currency'
+      responses:
+        '200':
+          description: Currency updated
+    delete:
+      summary: Delete currency
+      parameters:
+        - name: currencyId
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Currency deleted
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+
+    WatchlistItem:
+      type: object
+      properties:
+        id:
+          type: string
+        symbol:
+          type: string
+        userId:
+          type: string
+
+    Currency:
+      type: object
+      properties:
+        id:
+          type: string
+        code:
+          type: string
+        name:
+          type: string

@@ -9,6 +9,7 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "node-fetch": "^3.3.2",
     "prime-number-check": "^1.0.1"
   },
   "repository": {
